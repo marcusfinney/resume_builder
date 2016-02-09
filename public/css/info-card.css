@@ -1,0 +1,52 @@
+
+.cards-to-cart-button {
+	padding: 20px 6px;
+}
+
+.cards-header-section {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.card-image img {
+	max-height: 75px;
+}
+
+@media only screen and (max-width: 992px) {
+	.container {
+		margin: 0;
+		max-width: 100%;
+		padding: 0;
+	}
+
+	.cards-to-cart-button {
+		padding: 20px 10px;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.cards-header-section,
+	.cards-disclaimer,
+	.cards-to-cart-button {
+		padding: 20px;
+	}
+
+	.card-container .btn {
+		display: block;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	.card-feature-container {
+		display: table;
+	}
+	.card-image,
+	.card-text {
+		display: table-cell;
+		vertical-align: middle;
+		float: none;
+	}
+	.card-image img {
+		max-height: 175px;
+	}
+}
+

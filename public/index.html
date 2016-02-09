@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>React Tutorial</title>
+    <!-- Not present in the tutorial. Just for basic styling. -->
+    <link rel="stylesheet" href="css/base.css" />
+    <link href="//img1.wsimg-com.ide/ux/dev-brand/css/uxcore-sales.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/sales-cms.css" />
+    <link rel="stylesheet" href="css/info-card.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
+  </head>
+  <body class="bg-faint ux-app">
+    <!--<div id="content"></div>
+    <script type="text/babel" src="scripts/example.js"></script>-->
+    <!--<script type="text/babel">
+      // To get started with this tutorial running your own code, simply remove
+      // the script tag loading scripts/example.js and start writing code here.
+
+      // var data = [
+      //   {id: 1, author: "Fucking me", text: "suh du, prob *brah?*"},
+      //   {id: 2, author: "Me A-Fucking Again", text: "*ya*, didnt think so dude"}
+      // ];
+
+      var CommentBox = React.createClass({
+        loadCommentsFromServer: function() {
+          $.ajax({
+            url: this.props.url,
+            dataType: 'json',
+            cache: false,
+            success: function (data) {
+              this.setState({data: data});
+            }.bind(this),
+            error: function(xhr, status, err) {
+              console.error(this.props.url, status, err.toString());
+            }.bind(this)
+          });        
+        },
+        handleCommentSubmit: function(comment) {
+
+          var comments = this.state.data;
+          comment.id = Date.now();
+          var newComments = comments.concat([comment]);
+          this.setState({data: newComments});
+
+          $.ajax({
+            url: this.props.url,
+            dataType: 'json',
+            type: 'POST',
+            data: comment,
+            success: function(data) {
+              this.setState({data: data});
+            }.bind(this),
+            error: function(xhr, status, err) {
+              this.setState({data: comments});
+              console.error(this.props.url, status, err.toString())
+            }.bind(this)
+          });
+        },
+        getInitialState: function () {
+          return {data: []};
+        },
+
+        componentDidMount: function() {
+          this.loadCommentsFromServer();
+          setInterval(this.loadCommentsFromServer, this.props.pollInterval)
+        },
+
+        render : function() {
+          return (
+            <div className="commentBox">
+              <h3>fucking comments</h3>
+              <CommentList data={this.state.data} />
+              </div>
+          );
+        }
+      });
+
+      var CommentList = React.createClass({
+        render: function() {
+          var commentNodes = this.props.data.map(function(comment) {
+            return (
+              <Comment author={comment.author} key={comment.id}>
+                {comment.text}
+              </Comment>
+            );
+          });
+          return (
+            <div className="commentList">
+              {commentNodes}
+            </div>
+          );
+        }
+      });
+
+      var CommentForm = React.createClass({
+        getInitialState: function () {
+          return { author: '', text: '' };
+        },
+        handleAuthorChange: function (e) {
+          this.setState({ author: e.target.value });
+        },
+        handleTextChange: function (e) {
+          this.setState({ text: e.target.value });
+        },        
+        handleSubmit: function (e) {
+          e.preventDefault();
+          var author = this.state.author.trim();
+          var text = this.state.text.trim();
+
+          if (!text || !author) 
+            return;
+          
+          this.props.onCommentSubmit({author: author, text: text});
+          this.setState({author: '', text: ''});
+
+        },
+        render: function() {
+          return (
+            <form className="commentForm" onSubmit={this.handleSubmit}>
+               <input
+                  type="text"
+                  placeholder="Your name"
+                  value={this.state.author}
+                  onChange={this.handleAuthorChange} />
+              <input
+                type="text"
+                placeholder="Say something..."
+                value={this.state.text}
+                onChange={this.handleTextChange} />
+              <input type="submit" value="Post" />
+            </form>
+          );
+        }
+      });
+
+      var Comment = React.createClass({
+        rawMarkup: function() {
+          var rawMarkup = marked(this.props.children.toString(), {sanitize: true});
+          return { __html: rawMarkup };
+        },
+
+        render: function() {
+          return (
+            <div className="comment">
+              <h2 classname="commentAuthor">
+                {this.props.author}
+              </h2>
+              <span dangerouslySetInnerHTML={this.rawMarkup()} />
+            </div>
+          );
+        }
+      });
+
+
+      ReactDOM.render(
+        <CommentBox url="/api/comments" pollInterval={2000}/>,
+        document.getElementById('content')
+      );
+    </script>-->
+    <div id="" class="vsc-content-card-module tile-section">
+      <div class="card-container container">
+        <div class="row">
+          <div class="cards-content col-sm-12 col-md-8">
+            <div class="row">
+              <div class="cards-header-section col-sm-10 col-sm-offset-1 col-md-12 col-md-offset-0">
+                <div class="row">
+                  <div class="cards-title headline-primary h3 col-md-9 col-sm-12 text-left">What will you do with your domain name?</div>
+                  <a class="cards-cart-link text-light col-md-3 col-sm-12 hidden-xs text-right" href="#">Continue to Cart</a>
+                </div>  
+              </div>
+            </div>
+            <div class="ux-card content-card-mod col-sm-12">
+              <div class="row">
+                <div class="solo-card-content col-sm-10 col-sm-offset-1">
+                  <div class="card-feature-container row">
+                    <div class="card-image text-center col-xs-12 col-md-4">
+                      <img class="img-responsive features-img features-img-left" src="images/what.png"> 
+                    </div>
+                    <div class="card-text col-xs-12 col-md-8">
+                      <div class="h4 headline-primary card-title">MAKE IT PRIVATE.</div>
+                      <div class="card-description">When you register a domain, your name, address, phone are automatically published for the world to see. Protect yourself from spam and scams.</div>
+                    </div>
+                  </div>
+
+                  <!-- here are where content blocks can go -->
+                  <div class="content-block-container">
+                    <div class="content-block">
+                      <hr>
+                      <div class="row">
+                        <div class="content-text col-xs-12 col-sm-9">
+                          <div class="content-title headline-primary h4">
+                            Privacy Protection
+                          </div>
+                          <div class="content-subtitle headline-primary h6">
+                            Hides your personal details from public view
+                          </div>
+                          <div class="content-price subheadline-primary h5">
+                            <strike>$9.99</strike> 
+                            <span class="text-secondary subheadline-primary">
+                              <span class="h4 headline-primary">
+                                <span class="text-secondary">$7.99</span>
+                              </span>/domain per yr
+                            </span>
+                          </div>
+                        </div>
+                        <div class="content-button text-right col-xs-12 col-sm-3">
+                          <a class="btn btn-sm btn-primary">
+                            SELECT
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="cards-to-cart-button text-right col-xs-12 col-sm-10 col-sm-offset-1 col-md-12 col-md-offset-0">
+                <a class="btn btn-sm btn-purchase">
+                  Continue to Cart
+                </a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="cards-disclaimer text-left col-xs-12 col-sm-10 col-sm-offset-1 col-md-12 col-md-offset-0">
+                <a href="#" class="text-link">*, **, 1, 2, 3, ^^, X, XX, XXX Click here for product limitations.</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
