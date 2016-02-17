@@ -15,8 +15,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
   </head>
   <body class="bg-faint ux-app">
-    <!--<div id="content"></div>
-    <script type="text/babel" src="scripts/example.js"></script>-->
+    <div id="content"></div>
+    <!--<script type="text/babel" src="scripts/example.js"></script>-->
     <!--<script type="text/babel">
       // To get started with this tutorial running your own code, simply remove
       // the script tag loading scripts/example.js and start writing code here.
@@ -73,7 +73,7 @@
         render : function() {
           return (
             <div className="commentBox">
-              <h3>fucking comments</h3>
+              <h3>Comments</h3>
               <CommentList data={this.state.data} />
               </div>
           );
@@ -161,11 +161,14 @@
         <CommentBox url="/api/comments" pollInterval={2000}/>,
         document.getElementById('content')
       );
-    </script>-->
+    </script> -->
+
     <div id="" class="vsc-content-card-module tile-section">
       <div class="card-container container">
         <div class="row">
-          <div class="cards-content col-sm-12 col-md-8">
+          
+
+          <div class="cards-content col-sm-12 col-md-12"> <!-- control card content width -->
             <div class="row">
               <div class="cards-header-section col-sm-10 col-sm-offset-1 col-md-12 col-md-offset-0">
                 <div class="row">
@@ -174,66 +177,361 @@
                 </div>  
               </div>
             </div>
-            <div class="ux-card content-card-mod col-sm-12">
-              <div class="row">
-                <div class="solo-card-content col-sm-10 col-sm-offset-1">
-                  <div class="card-feature-container row">
-                    <div class="card-image text-center col-xs-12 col-md-4">
-                      <img class="img-responsive features-img features-img-left" src="images/what.png"> 
-                    </div>
-                    <div class="card-text col-xs-12 col-md-8">
-                      <div class="h4 headline-primary card-title">MAKE IT PRIVATE.</div>
-                      <div class="card-description">When you register a domain, your name, address, phone are automatically published for the world to see. Protect yourself from spam and scams.</div>
-                    </div>
-                  </div>
 
-                  <!-- here are where content blocks can go -->
-                  <div class="content-block-container">
-                    <div class="content-block">
-                      <hr>
-                      <div class="row">
-                        <div class="content-text col-xs-12 col-sm-9">
-                          <div class="content-title headline-primary h4">
-                            Privacy Protection
-                          </div>
-                          <div class="content-subtitle headline-primary h6">
-                            Hides your personal details from public view
-                          </div>
-                          <div class="content-price subheadline-primary h5">
-                            <strike>$9.99</strike> 
-                            <span class="text-secondary subheadline-primary">
-                              <span class="h4 headline-primary">
-                                <span class="text-secondary">$7.99</span>
-                              </span>/domain per yr
-                            </span>
+            <div class="card-column-container row">
+
+              <!-- solo card -->
+              <!--
+                CardCountClass:         col-sm-12
+                CardFeatureBlockClass:  feature-table
+                CardImageClass:         col-xs-12 col-md-4 feature-cell
+                CardTextClass:          col-xs-12 col-md-8 feature-cell
+
+              -->
+
+              <!--
+              <div class="card-column solo-card col-sm-12 col-md-7">
+                <div class="ux-card content-card-mod">
+                  <div class="row">
+                    <div class="card-content col-sm-10 col-sm-offset-1"> 
+                      
+                      <div class="card-feature-container feature-table row">
+                        <div class="card-image feature-cell text-center col-xs-12 col-md-4">
+                          <img class="img-responsive features-img features-img-left" src="images/what.png"> 
+                        </div>
+                        <div class="card-text feature-cell col-xs-12 col-md-8">
+                          <div class="h4 headline-primary card-title">MAKE IT PRIVATE.</div>
+                          <div class="card-description">When you register a domain, your name, address, phone are automatically published for the world to see. Protect yourself from spam and scams.</div>
+                        </div>
+                      </div>
+
+                      <div class="content-block-container">
+                        <div class="content-block">
+                          <hr>
+                          <div class="row">
+                            <div class="content-text col-xs-12 col-sm-9">
+                              <div class="content-title headline-primary h4">
+                                Privacy Protection
+                              </div>
+                              <div class="content-subtitle headline-primary h6">
+                                Hides your personal details from public view
+                              </div>
+                              <div class="content-price subheadline-primary h5">
+                                <strike>$9.99</strike> 
+                                <span class="text-secondary subheadline-primary">
+                                  <span class="h4 headline-primary">
+                                    <span class="text-secondary">$7.99</span>
+                                  </span>/domain per yr
+                                </span>
+                              </div>
+                            </div>
+                            <div class="content-button text-right col-xs-12 col-sm-3">
+                              <a class="btn btn-sm btn-primary">
+                                SELECT
+                              </a>
+                            </div>
                           </div>
                         </div>
-                        <div class="content-button text-right col-xs-12 col-sm-3">
-                          <a class="btn btn-sm btn-primary">
-                            SELECT
-                          </a>
+                      </div>
+                      <hr>
+
+                      <div class="dropdown-block">
+                        <div class="dropdown-container">
+
+                          <div class="dropdown-selected">
+                            <span class="dropdown-selection">No Thanks</span>
+                          </div>
+
+                          <div class="dropdown-selected-button">
+                            <span class="uxicon uxicon-chevron-down-lt"></span>
+                          </div>
+
+                          <div class="dropdown-list">
+                            <div id="0" class="dropdown-content active">No Thanks</div>
+                            <div id="1" class="dropdown-content">Product 1</div>
+                            <div id="2" class="dropdown-content">Product 2</div>
+                            <div id="3" class="dropdown-content">Product 3</div>
+                          </div>
+        
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              -->
+
+              <!-- multi card -->
+              <!--
+                CardCountClass:         col-sm-12 col-md-#
+                CardFeatureBlockClass:  null
+                CardImageClass:         col-xs-12 col-md-12
+                CardTextClass:          col-xs-12 col-md-12
+
+              -->
+
+              <!-- Assorted-Plans Card Block -->
+              <div class="card-column multi-card col-sm-12 col-md-4">
+                <div class="ux-card content-card-mod">
+                  <div class="row">
+                    <div class="card-content col-xs-10 col-xs-offset-1"> 
+                      
+                      <div class="card-feature-container row">
+                        <div class="card-image text-center col-xs-12 col-md-12">
+                          <img class="img-responsive features-img features-img-left" src="images/what.png"> 
+                        </div>
+                        <div class="card-text col-xs-12 col-md-12">
+                          <div class="h4 headline-primary card-title">MAKE IT PRIVATE.</div>
+                          <div class="card-description">
+                            When you register a domain, your name, address, phone are automatically published for the world to see. Protect yourself from spam and scams.
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="distinct-plan-content">
+                        <div class="content-block-container">
+                          <div class="content-block">
+                            <div class="row">
+                              <div class="content-text col-xs-12 ">
+                                <div class="content-title headline-primary h4">
+                                  Privacy Protection
+                                </div>
+                                <div class="content-subtitle headline-primary h6">
+                                  Hides your personal details from public view
+                                </div>
+                                <div class="content-price subheadline-primary h5">
+                                  <strike>$9.99</strike> 
+                                  <span class="text-secondary subheadline-primary">
+                                    <span class="h4 headline-primary">
+                                      <span class="text-secondary">$7.99</span>
+                                    </span>/domain per yr
+                                  </span>
+                                </div>
+                              </div>
+                              <div class="content-button text-right col-xs-12 ">
+                                <a class="btn btn-block btn-sm btn-primary">
+                                  SELECT
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Sectioned-Plans Card Block -->
+              <div class="card-column multi-card col-sm-12 col-md-4">
+                <div class="ux-card content-card-mod">
+                  <div class="row">
+                    <div class="card-content col-xs-10 col-xs-offset-1"> 
+                      
+                      <div class="row">
+                        <div class="sectioned-plan-content section-1 col-xs-12 col-sm-5 col-md-12">
+                          <div class="card-feature-container row">
+                            <div class="card-text col-xs-12 col-md-12">
+                              <div class="h4 headline-primary card-title">MAKE IT PRIVATE.</div>
+                              <div class="card-description">
+                                When you register a domain, your name, address, phone are automatically published for the world to see.<br><br><br><br>And a little more.
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="content-block-container">
+                            <div class="content-block">
+                              <div class="row">
+                                <div class="content-price subheadline-primary col-xs-12 h5">
+                                  As low as 
+                                  <span class="text-secondary subheadline-primary">
+                                    <span class="h4 headline-primary">
+                                      <span class="text-secondary">$7.99</span>
+                                    </span>/domain per yr
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="dropdown-block">
+                            <div class="dropdown-container">
+
+                              <div class="dropdown-selected">
+                                <span class="dropdown-selection">No Thanks</span>
+                              </div>
+
+                              <div class="dropdown-selected-button">
+                                <span class="uxicon uxicon-chevron-down-lt"></span>
+                              </div>
+
+                              <div class="dropdown-list">
+                                <div id="0" class="dropdown-content active">No Thanks</div>
+                                <div id="1" class="dropdown-content">Product 1</div>
+                                <div id="2" class="dropdown-content">Product 2</div>
+                                <div id="3" class="dropdown-content">Product 3</div>
+                              </div>
+            
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="section-divider-container col-xs-12 col-sm-2 col-md-12">
+                          <div class="section-divider-content">
+                            <div class="section-divider-line"></div>
+                            <img class="section-divider-image img-responsive features-img features-img-left" src="images/what.png"> 
+                          </div>
+                        </div>
+
+                        <div class="sectioned-plan-content section-2 col-xs-12 col-sm-5 col-md-12">
+                          <div class="card-feature-container row">
+                            <div class="card-text col-xs-12 col-md-12">
+                              <div class="h4 headline-primary card-title">MAKE IT PRIVATE.</div>
+                              <div class="card-description">
+                                When you register a domain, your name, address, phone are automatically published for the world to see.<br><br>And a little more.
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="content-block-container">
+                            <div class="content-block">
+                              <div class="row">
+                                <div class="content-price subheadline-primary h5 col-xs-12">
+                                  As low as 
+                                  <span class="text-secondary subheadline-primary">
+                                    <span class="h4 headline-primary">
+                                      <span class="text-secondary">$7.99</span>
+                                    </span>/domain per yr
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="dropdown-block">
+                            <div class="dropdown-container">
+
+                              <div class="dropdown-selected">
+                                <span class="dropdown-selection">No Thanks</span>
+                              </div>
+
+                              <div class="dropdown-selected-button">
+                                <span class="uxicon uxicon-chevron-down-lt"></span>
+                              </div>
+
+                              <div class="dropdown-list">
+                                <div id="0" class="dropdown-content active">No Thanks</div>
+                                <div id="1" class="dropdown-content">Product 1</div>
+                                <div id="2" class="dropdown-content">Product 2</div>
+                                <div id="3" class="dropdown-content">Product 3</div>
+                              </div>
+            
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="cards-to-cart-button text-right col-xs-12 col-sm-10 col-sm-offset-1 col-md-12 col-md-offset-0">
-                <a class="btn btn-sm btn-purchase">
-                  Continue to Cart
-                </a>
+
+              <!-- Assorted-Plans Card Block -->
+              <div class="card-column multi-card col-sm-12 col-md-4">
+                <div class="ux-card content-card-mod">
+                  <div class="row">
+                    <div class="card-content col-xs-10 col-xs-offset-1"> 
+                      
+                      <div class="card-feature-container row">
+                        <div class="card-image text-center col-xs-12 col-md-12">
+                          <img class="img-responsive features-img features-img-left" src="images/what.png"> 
+                        </div>
+                        <div class="card-text col-xs-12 col-md-12">
+                          <div class="h4 headline-primary card-title">MAKE IT PRIVATE.</div>
+                          <div class="card-description">
+                            When you register a domain, your name, address, phone are automatically published for the world to see. Protect yourself from spam and scams.
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="distinct-plan-content">
+                        <div class="content-block-container">
+                          <div class="content-block">
+                            <div class="row">
+                              <div class="content-text col-xs-12 ">
+                                <div class="content-title headline-primary h4">
+                                  Privacy Protection
+                                </div>
+                                <div class="content-subtitle headline-primary h6">
+                                  Hides your personal details from public view
+                                </div>
+                                <div class="content-price subheadline-primary h5">
+                                  <strike>$9.99</strike> 
+                                  <span class="text-secondary subheadline-primary">
+                                    <span class="h4 headline-primary">
+                                      <span class="text-secondary">$7.99</span>
+                                    </span>/domain per yr
+                                  </span>
+                                </div>
+                              </div>
+                              <div class="content-button text-right col-xs-12 ">
+                                <a class="btn btn-block btn-sm btn-primary">
+                                  SELECT
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="cards-to-cart-button text-right col-xs-10 col-xs-offset-1 col-md-12 col-md-offset-0">
+                    <a class="btn btn-sm btn-purchase">
+                      Continue to Cart
+                    </a>
+                  </div>
+                </div>
               </div>
+            
             </div>
-            <div class="row">
-              <div class="cards-disclaimer text-left col-xs-12 col-sm-10 col-sm-offset-1 col-md-12 col-md-offset-0">
-                <a href="#" class="text-link">*, **, 1, 2, 3, ^^, X, XX, XXX Click here for product limitations.</a>
-              </div>
-            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="cards-disclaimer text-left col-xs-10 col-xs-offset-1 col-md-12 col-md-offset-0">
+            <a href="#" class="text-link">*, **, 1, 2, 3, ^^, X, XX, XXX Click here for product limitations.</a>
           </div>
         </div>
       </div>
     </div>
   </body>
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+        $('.dropdown-selected, .dropdown-selected-button').click( function() {
+            $(this).siblings('.dropdown-list').toggle();
+            $(this).closest('.dropdown-block').addClass('.open-dropdown');
+        });
+        $('.dropdown-content').click( function() {
+            var $dropdownBlock = $(this).closest('.dropdown-block');
+            var contentText = $(this).html();
+            var $dropdownList = $(this).closest('.dropdown-list');
+
+            $dropdownBlock.find('.dropdown-selection').html(contentText);
+            $dropdownList.hide();
+
+            $dropdownBlock.find('.dropdown-content.active').removeClass('active');
+            $(this).addClass('active');
+        });
+        $('html').click(function() {
+            $('.dropdown-list').hide();
+        })
+        $('.dropdown-block').click(function(e){
+             e.stopPropagation();
+        });
+    });
+</script>
 </html>

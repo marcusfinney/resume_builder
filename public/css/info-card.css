@@ -2,51 +2,189 @@
 .cards-to-cart-button {
 	padding: 20px 6px;
 }
-
 .cards-header-section {
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
-.card-image img {
-	max-height: 75px;
+.card-image,
+.card-title,
+.content-title,
+.content-subtitle{
+	padding: 0 0 10px;
 }
-
-@media only screen and (max-width: 992px) {
+.card-image img {
+	max-height: 90px;
+}
+.dropdown-block {
+	height: 41px;
+	position: relative;
+	margin: 10px 0;
+}
+.cards-content .ux-card{
+	padding: 35px 0;
+}
+.dropdown-container {
+	background-color: #fff;
+	cursor: pointer;
+	height: 100%;
+	position: absolute;
+	width: 100%;
+}
+.dropdown-selected {
+	border: 1px solid #b3b3b3; 
+	border-top: 3px solid #b3b3b3;
+	padding: 7px 30px 5px 10px;
+}
+.dropdown-selected-button {
+	background-color: transparent;
+	bottom: 0;
+	height: 31px;
+	line-height: 0;
+	margin: auto;
+	position: absolute;
+	right: 1px;
+	top: 35%;
+	width: 26px;
+}
+.dropdown-list {
+	display: none;
+	position: absolute;
+	width: 100%;
+	z-index: 2;
+}
+.dropdown-content {
+	background: #fff;
+	border-bottom: 1px solid #b3b3b3;
+	border-left: 1px solid #b3b3b3;
+	border-right: 1px solid #b3b3b3;
+	cursor: pointer;
+	padding: 7px 30px 5px 10px;
+}
+.dropdown-content.active {
+	background: #FFA500;
+	color: #fff;
+}
+.dropdown-content:not(.active):hover { 
+    background: #eae9e9;
+}
+.dropdown-content.active:hover { 
+    background: #ffc04c;
+}
+.ux-card {
+	overflow: visible !important;
+} 
+.card-feature-container,
+.content-text {
+	padding-bottom: 20px;
+}
+.cards-disclaimer {
+	padding: 20px 0 0;
+}
+.section-divider-container {
+	height: 125px;
+	display: inline-block;
+	position: relative;
+}
+.section-divider-line {
+	position: absolute;
+	width: 100%;
+	padding: 0 10px;
+	border-top: 2px solid #efefef;
+	top: 50%;
+	left: 0;
+	right: 0;
+}
+.section-divider-content {
+	position: relative;
+	height: 100%;
+}
+.section-divider-image {
+	position: absolute;
+	max-height: 75px;	
+	right: 0;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	max-height: 100px;
+}
+@media only screen and (max-width: 991px) {
 	.container {
 		margin: 0;
 		max-width: 100%;
 		padding: 0;
 	}
-
+	.cards-header-section,
+	.cards-disclaimer,
 	.cards-to-cart-button {
 		padding: 20px 10px;
+	}
+	.card-column:not(:last-child) {
+		margin: 0 0 50px;
 	}
 }
 
 @media only screen and (max-width: 768px) {
-	.cards-header-section,
-	.cards-disclaimer,
-	.cards-to-cart-button {
-		padding: 20px;
-	}
-
 	.card-container .btn {
 		display: block;
 	}
 }
 
-@media only screen and (min-width: 992px) {
-	.card-feature-container {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	.card-content > .row {
 		display: table;
 	}
-	.card-image,
-	.card-text {
+	.sectioned-plan-content,
+	.section-divider-container {
+		display: table-cell;
+		float: none;
+		vertical-align: middle;
+	}
+	.section-divider-container {
+		height: 125px;
+		position: relative;
+	}
+	.section-divider-line {
+		position: absolute;
+		height: 120%;
+		width: 1px;
+		border-right: 2px solid #efefef;
+		padding: 0;
+		border-top: none;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	.feature-table {
+		display: table;
+	}
+	.feature-cell {
 		display: table-cell;
 		vertical-align: middle;
 		float: none;
 	}
-	.card-image img {
+	.multi-card .card-image.feature-cell img {
+		max-height: 75px;
+	}	
+	.solo-card .card-image.feature-cell img {
 		max-height: 175px;
+	}
+	.card-column:not(:first-child):not(:last-child) {
+		padding: 0 12px;
+	}
+	.card-column:first-child {
+		padding: 0 12px 0 0;
+	}
+	.card-column:last-child {
+		padding: 0 0 0 12px;
+	}
+	.card-column:only-child {
+		padding: 0;
 	}
 }
 
