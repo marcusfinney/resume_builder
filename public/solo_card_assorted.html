@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>React Tutorial</title>
+    <!-- Not present in the tutorial. Just for basic styling. -->
+    <link rel="stylesheet" href="css/base.css" />
+    <link href="//img1.wsimg-com.ide/ux/dev-brand/css/uxcore-sales.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/sales-cms.css" />
+    <link rel="stylesheet" href="css/info-card.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
+  </head>
+  <body class="bg-faint ux-app">
+    <div id="content"></div>
+
+    <!-- ## Product Cards Module will need to carry class to vsc-product-card-module -->
+    <div id="" class="vsc-content-card-module tile-section">
+      <div class="row">
+        <div class="card-container container">
+          <div class="row">
+            
+            <!-- $$ MULTI|SINGLE: col-md-12|col-md-8 -->
+            <div class="cards-content col-sm-12 col-md-8"> 
+              <div class="row">
+                <div class="cards-header-section col-xs-10 col-xs-offset-1 col-md-12 col-md-offset-0">
+                  <div class="row">
+                    <div class="cards-title headline-primary h3 col-md-9 col-sm-12 text-left">What will you do with your domain name?</div>
+                    <!-- ## Link Block -->
+                    <a class="cards-cart-link text-light col-md-3 col-sm-12 hidden-xs text-right" href="#">Continue to Cart</a>
+                  </div>  
+                </div>
+              </div>
+
+              <!-- $$ MULTI|SINGLE: multi-card-container|solo-card-container -->              
+              <div class="card-column-container solo-card-container row">
+
+                <!-- Assorted-Plans Content -->
+                <!-- $$ 0|1|2|3|4: col-md-12|col-md-12|col-md-6|col-md-4|col-md-3 -->        
+                <div class="card-column col-sm-12 col-md-12">
+                  <!-- ## Assorted-Plans Card Block-->
+                  <div class="ux-card content-card-mod">
+                    <div class="row">
+                      <div class="card-content col-xs-10 col-xs-offset-1"> 
+                        
+                        <!-- ## Feature Block -->
+                        <!-- $$ MULTI|SOLO: string.empty|feature-table -->
+                        <div class="card-feature-container feature-table row">
+
+                          <!-- $$ MULTI|SOLO: col-sm-12|feature-cell col-sm-4 -->
+                          <div class="card-image text-center col-xs-12 feature-cell col-sm-4">
+                            <img class="img-responsive features-img features-img-left" src="images/what.png"> 
+                          </div>
+
+                          <!-- $$ MULTI|SOLO: col-sm-12|feature-cell col-sm-8 -->
+                          <div class="card-text col-xs-12 feature-cell col-sm-8">
+                            <div class="h4 headline-primary card-title">MAKE IT PRIVATE.</div>
+                            <div class="card-description">
+                              When you register a domain, your name, address, phone are automatically published for the world to see. Protect yourself from spam and scams.
+                            </div>
+                          </div>
+
+                        </div>
+
+                        <!-- ## Distince Plan Block -->
+                        <div class="distinct-plan-content">
+                          <div class="content-block-container">
+                            <div class="content-block">
+                              <div class="row">
+                                <!-- $$ MULTI|SOLO: col-xs-12|col-xs-12 col-sm-9 -->
+                                <div class="content-text col-xs-12 col-sm-9">
+                                  <div class="content-title headline-primary h4">
+                                    Privacy Protection
+                                  </div>
+                                  <div class="content-subtitle headline-primary h6">
+                                    Hides your personal details from public view
+                                  </div>
+                                  <div class="content-price subheadline-primary h5">
+                                    <strike>$9.99</strike> 
+                                    <span class="text-secondary subheadline-primary">
+                                      <span class="h4 headline-primary">
+                                        <span class="text-secondary">$7.99</span>
+                                      </span>/domain per yr
+                                    </span>
+                                  </div>
+                                </div>
+                                <!-- ## Select Button Block -->
+                                <!-- $$ MULTI|SOLO: col-xs-12|col-xs-12 col-sm-3 -->
+                                <div class="content-button text-right col-xs-12 col-sm-3">
+                                  <a class="btn btn-block btn-primary">
+                                    SELECT
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                      <div class="view-more-plans-container text-center">
+                        <div class="view-more-plans-text col-xs-12">
+                          View More Plans
+                        </div>
+                        <div class="view-more-plans-icon col-xs-12">
+                          <span class="uxicon uxicon-chevron-down"></span>
+                        </div>
+                      </div>  
+
+                    </div>
+                  </div>
+                  </div>
+                  <!-- ## Add To Car Button -->
+                  <div class="row">
+                    <div class="cards-to-cart-button text-right col-xs-10 col-xs-offset-1 col-md-12 col-md-offset-0">
+                      <a class="btn btn-sm btn-purchase">
+                        Continue to Cart
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <!-- ## Disclaimer Block -->
+            <div class="cards-disclaimer text-left col-xs-10 col-xs-offset-1 col-md-12 col-md-offset-0">
+              <a href="#" class="text-link">*, **, 1, 2, 3, ^^, X, XX, XXX Click here for product limitations.</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+        $('.dropdown-selected, .dropdown-selected-button').click( function() {
+            $(this).siblings('.dropdown-list').toggle();
+            $(this).closest('.dropdown-block').addClass('.open-dropdown');
+        });
+        $('.dropdown-content').click( function() {
+            var $dropdownBlock = $(this).closest('.dropdown-block');
+            var contentText = $(this).html();
+            var $dropdownList = $(this).closest('.dropdown-list');
+
+            $dropdownBlock.find('.dropdown-selection').html(contentText);
+            $dropdownList.hide();
+
+            $dropdownBlock.find('.dropdown-content.active').removeClass('active');
+            $(this).addClass('active');
+        });
+        $('html').click(function() {
+            $('.dropdown-list').hide();
+        })
+        $('.dropdown-block').click(function(e){
+             e.stopPropagation();
+        });
+    });
+</script>
+</html>

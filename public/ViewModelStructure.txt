@@ -1,0 +1,105 @@
+Model contents for blocks/Module:
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Product Card:
+
+	Responsibilites: 						This viewModel's primary job is to determine the width of the container the card-columns will
+											rest in, as well as the width of each card-column. Also the Product Card Controller is to assign
+											an addToCartButtonViewModel to the productCard.
+
+	(IHtmlStringModel) 						Title
+	(ILinkBlockViewModel) 					LinkBlockViewModel
+	(IDisclaimerBlockViewModel) 			DisclaimerBlockViewModel
+	(IList<IProductCardBlockViewModel>) 	ProductCardsBlockViewModels (Interface for either Assorted-Plans or Sectioned-Plans Card Block, 
+																		should pass down either solo or multi styled feature builder model)
+	(string) 								BackgroundColorClass
+	(string) 								CardColumnContainerTypeClass
+												: ?-card-container
+												Where: ? such that
+													if card count <= 1, ? = solo
+													else ? = multi
+	(string) 								CardsContentWidthClass 
+												: col-xs-10 col-xs-offset-1 col-md-? col-md-offset-0
+												Where: ? such that 
+													if card count <= 1, ? = 8
+													else ? = 12
+	(string) 								CardsColumnWidthClass
+												Where: ? = 12 divided by card count
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Assorted-Plans Card implements IProductCardBlock:
+
+	Responsibilities:						This viewModel's primary job is to determine whether MorePlansText is present, and to give a set
+											of classes to determine the layout of the feature block items (hydrate feature block service from 
+											builder passed down : two builders, one for when their are mulitple cards, one for when there is a single).
+											An additional job for this block is the handle the placement of <hr> tags. After the first plan has been
+											added to the card, all proceeding plans should be prefixed with an <hr> tag.
+
+	(IHtmlStringModel)						MorePlansText
+												: ?
+												Where ? such that
+													if distinct plan count <= 1, ? = string.empty
+													else ? = value from sitecore field
+	(IFeatureBlockViewModel)				FeatureBlockViewModel
+	(IList<IDistinctPlanBlockViewModel>)	DistinctPlanBlockViewModel
+	(IAddToCartButtonBlockViewModel) 		AddToCardButtonBlockViewModel
+												: ?
+												Where ? such that
+													if this assorted-plans card is the final product card, ? is hydrated with anybutton service
+													else ? = null
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Distinct-Plan Card:
+	
+	Responsibilities: 						This viewModel's primary job is to consume price information for the plan and to hydrate a select button
+
+	(IHtmlStringModel)						Plan Title
+	(IHtmlStringModel)						Plan Subtitle
+	(IHtmlStringModel)						Plan Price
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Select Button:
+
+	Responsibilites:						This viewModel's primary job is to display information in two forms: selected and unselected. Javascript/CSS
+											for parent blocks will determine the blocks current state. By default, the blocks state is unselected.
+
+	(IHtmlStringModel)						Button Text
+	(IHtmlStringModel)						Selected Text
+	(IHtmlStringModel)						Remove Text
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Sectioned-Plans Card implements IProductCardBlock:
+
+	Responsibilities: 						This viewModel's primary job is hydrate two section plan block viewModels (requires at least two or doesn't render).
+											Will take first two blocks of children.
+	
+	(ISectionPlanBlockViewModel)			SectionPlanBlockViewModel							
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Section-Plan:
+
+	Responsibilities:						This viewModel's primary job is to hydrate a feature block, assign a plan title, plan subtitle, and plan price, and
+											set a dropdown viewModel
+
+	(IFeatureBlockViewModel)				FeatureBlockViewModel
+	(IDropdownBlockViewModel)				DropdownBlockViewModel
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Dropdown:
+	
+	Responsiblities:						This viewModel's primary job is to set and display an assortment of product packages.
+
+	(IList<IProductPackage>)				ProductPackages
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
