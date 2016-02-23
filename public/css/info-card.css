@@ -143,6 +143,16 @@
   }
 }
 @media only screen and (min-width: 768px) {
+  .solo-card-container .content-text,
+  .solo-card-container .content-button {
+    float: left;
+  }
+  .solo-card-container .content-text {
+    width: 75%;
+  }
+  .solo-card-container .content-button {
+    width: 25%;
+  }
   .card-column-container.solo-card-container .card-content > .row {
     display: table;
   }
