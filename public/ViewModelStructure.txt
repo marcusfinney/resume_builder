@@ -8,9 +8,9 @@ Product Card:
 											an addToCartButtonViewModel to the productCard.
 
 	(IHtmlStringModel) 						Title
-	(ILinkBlockViewModel) 					LinkBlockViewModel
-	(IDisclaimerBlockViewModel) 			DisclaimerBlockViewModel
-	(IList<IProductCardBlockViewModel>) 	ProductCardsBlockViewModels (Interface for either Assorted-Plans or Sectioned-Plans Card Block, 
+	(LinkBlockViewModel) 					LinkBlockViewModel
+	(DisclaimerBlockViewModel) 				DisclaimerBlockViewModel
+	(IList<ProductCardBlockViewModel>) 		ProductCardsBlockViewModels (Interface for either Assorted-Plans or Sectioned-Plans Card Block, 
 																		should pass down either solo or multi styled feature builder model)
 	(string) 								BackgroundColorClass
 	(string) 								CardColumnContainerTypeClass
@@ -41,9 +41,9 @@ Assorted-Plans Card implements IProductCardBlock:
 												Where ? such that
 													if distinct plan count <= 1, ? = string.empty
 													else ? = value from sitecore field
-	(IFeatureBlockViewModel)				FeatureBlockViewModel
-	(IList<IDistinctPlanBlockViewModel>)	DistinctPlanBlockViewModel
-	(IAddToCartButtonBlockViewModel) 		AddToCardButtonBlockViewModel
+	(FeatureBlockViewModel)					FeatureBlockViewModel
+	(IList<DistinctPlanBlockViewModel>)		DistinctPlanBlockViewModel
+	(ButtonBlockViewModel) 					AddToCardButtonBlockViewModel
 												: ?
 												Where ? such that
 													if this assorted-plans card is the final product card, ? is hydrated with anybutton service
@@ -51,10 +51,12 @@ Assorted-Plans Card implements IProductCardBlock:
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
-Distinct-Plan Card:
+Distinct-Plan Block:
 	
 	Responsibilities: 						This viewModel's primary job is to consume price information for the plan and to hydrate a select button
 
+	(string)								ContentTextClass
+	(string)								ContentButtonClass
 	(IHtmlStringModel)						Plan Title
 	(IHtmlStringModel)						Plan Subtitle
 	(IHtmlStringModel)						Plan Price
@@ -77,7 +79,7 @@ Sectioned-Plans Card implements IProductCardBlock:
 	Responsibilities: 						This viewModel's primary job is hydrate two section plan block viewModels (requires at least two or doesn't render).
 											Will take first two blocks of children.
 	
-	(ISectionPlanBlockViewModel)			SectionPlanBlockViewModel							
+	(IList<SectionPlanBlockViewModel>)		SectionPlanBlockViewModel							
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -86,8 +88,8 @@ Section-Plan:
 	Responsibilities:						This viewModel's primary job is to hydrate a feature block, assign a plan title, plan subtitle, and plan price, and
 											set a dropdown viewModel
 
-	(IFeatureBlockViewModel)				FeatureBlockViewModel
-	(IDropdownBlockViewModel)				DropdownBlockViewModel
+	(FeatureBlockViewModel)					FeatureBlockViewModel
+	(DropdownBlockViewModel)				DropdownBlockViewModel
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -95,7 +97,7 @@ Dropdown:
 	
 	Responsiblities:						This viewModel's primary job is to set and display an assortment of product packages.
 
-	(IList<IProductPackage>)				ProductPackages
+	(IList<ProductPackage>)					ProductPackages
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
