@@ -31,7 +31,7 @@ body {
 }
 
 .step-item {
-	padding: 0 0 20px;
+	padding: 0 0 15px;
 }
 .cazary {
 	width: 100% !important;
@@ -40,8 +40,21 @@ body {
 .submit-input button {
     margin: 5px .5px;
 }
-
 .node_content > img {
     border: solid 3px;
     margin: 20px 0;
+}
+.input-group {
+    padding: 10px 0;
+}
+.input-group-addon {
+    background-color: cornsilk;
+}
+.qta,
+.qtb {
+    display: inline;
+}
+
+.multiple-choice {
+    margin: 0 0 20px;
 }
