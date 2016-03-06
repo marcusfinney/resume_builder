@@ -25,3 +25,14 @@ body {
         padding: 15px 0;
     }
 }
+
+.navbar-brand {
+	margin-left: 0 !important;
+}
+
+.step-item {
+	padding: 0 0 20px;
+}
+.cazary {
+	width: 100% !important;
+}
