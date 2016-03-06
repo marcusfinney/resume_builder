@@ -1,5 +1,5 @@
 {
-  "name": "resume-builder",
+  "name": "resume_builder",
   "version": "0.0.0",
   "description": "Code from the React tutorial.",
   "main": "server.js",
