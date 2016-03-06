@@ -36,3 +36,12 @@ body {
 .cazary {
 	width: 100% !important;
 }
+.pagination li a,
+.submit-input button {
+    margin: 5px .5px;
+}
+
+.node_content > img {
+    border: solid 3px;
+    margin: 20px 0;
+}
