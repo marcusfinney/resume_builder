@@ -10,7 +10,7 @@ Product Card:
 	(IHtmlStringModel) 						Title
 	(LinkBlockViewModel) 					LinkBlockViewModel
 	(DisclaimerBlockViewModel) 				DisclaimerBlockViewModel
-	(IList<ProductCardBlockViewModel>) 		ProductCardsBlockViewModels (Interface for either Assorted-Plans or Sectioned-Plans Card Block, 
+	(IList<AbstractPlansCardViewModel>) 	ProductCardsBlockViewModels (Interface for either Assorted-Plans or Sectioned-Plans Card Block, 
 																		should pass down either solo or multi styled feature builder model)
 	(string) 								BackgroundColorClass
 	(string) 								CardColumnContainerTypeClass
@@ -55,8 +55,6 @@ Distinct-Plan Block:
 	
 	Responsibilities: 						This viewModel's primary job is to consume price information for the plan and to hydrate a select button
 
-	(string)								ContentTextClass
-	(string)								ContentButtonClass
 	(IHtmlStringModel)						Plan Title
 	(IHtmlStringModel)						Plan Subtitle
 	(IHtmlStringModel)						Plan Price
